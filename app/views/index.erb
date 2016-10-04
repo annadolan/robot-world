@@ -1,0 +1,23 @@
+<h1 class ="text-center" style="font-weight: lighter">THE ROBOTS OF ROBOT WORLD</h1>
+<div class = "text-center" style="padding-bottom: 30px">
+<div class="row well">
+<% @robots.each do |robot| %>
+  <div class="col-md-4">
+    <img src="https://robohash.org/<%= robot.name %>.png">
+    <h3 style="font-weight: lighter"><a href="/robots/<%= robot.id %>"><%=robot.name %></a></h3>
+    <p><%= robot.city %>, <%= robot.state %></p>
+    <p><%= robot.department %> department</p>
+    <div class="row">
+      <div class="col-md-6">
+        <a href="/robots/<%= robot.id %>/edit"><button type="button" class="btn btn-default">EDIT</button></a>
+      </div>
+      <div class="col-md-6">
+        <form action="/robots/<%= robot.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+      </div>
+    </div>
+  </div>
+
+<% end %>

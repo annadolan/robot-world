@@ -1,0 +1,12 @@
+<h1 class = "text-center" style="font-weight: lighter">THIS IS ROBOT WORLD</h1>
+<div class="text-center">
+  <p><img src="https://robohash.org/abcde.png"></p>
+  <% robots_arr = @robots.map do |robot| %>
+    <% robot %>
+  <%end%>
+  <p>There are currently <%= robots_arr.count %> robots. </p>
+<div class="container">
+
+<p><a href="/robots"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-list"></span> Robots</button></a>
+<a href="/robots/new"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-user"></span> New Robot</button></a></p>
+</div>
